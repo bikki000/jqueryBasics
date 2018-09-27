@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 24 Dimension Manipulation</title>
+	<meta name="viewport" content="width=device-width, initial.scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/task024.css">
+	<script src="js/jQuery3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('ready');
+			console.log($('#main').height());
+			console.log($('#main').height('45'));
+			console.log($('#main').width());
+			console.log($('#main').width('500'));
+			console.log(ofs = $('#main').offset());
+			console.log(ofs.left + ' ' + ofs.top);
+			ofs.left=100; ofs.top=100;
+			$('#main').offset(ofs);
+			console.log($('#main').offset());
+			$('#main').offset({top:200, left:200});
+			console.log('Offset');
+			console.log($('#main').offset());
+			console.log($('#div1').offset());
+			console.log('position');
+			console.log($('#main').position());
+			console.log($('#div1').position());
+		});
+	</script>
+</head>
+<body>
+	<div id="main" style="background-color:gray">
+		this is first div
+		<div id="div1">
+			this is part div
+		</div>
+	</div>
+</body>
+</html>

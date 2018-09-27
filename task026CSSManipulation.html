@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 26 CSS Class Manipulation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/task026.css">
+	<script src="js/jQuery3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('ready');
+			$('#sidenav').css("background-color", "gray");
+			$('#sidenav > a').css({"color":"black", "font-size":"35px"});
+			$('#header').addClass("dotted");
+			$('#nav').addClass("dashed");
+			$('#main_content').addClass("solid");
+			$('#nav').toggleClass("dashed");
+		});
+	</script>
+</head>
+<body>
+	<div id="main" class="main">
+		<div id="header" class="header">
+			<h1>Header</h1>
+			<h3>Sub Header</h3>
+		</div>
+		<div id="nav" class="nav">
+				<a href="#" id="item11">item 1</a>
+				<a href="#" id="item12">item 2</a>
+				<a href="#" id="item13">item 3</a>
+		</div>
+		<div id="content" class="content">
+			<div id="sidenav" class="sidenav">
+				<a href="#" id="item21">item 1</a>
+				<a href="#" id="item22">item 2</a>
+				<a href="#" id="item23">item 3</a>
+			</div>
+			<div id="main_content" class="main-content">
+				main content
+			</div>
+		</div>
+		<div id="footer" class="footer">
+			footer
+		</div>
+	</div>
+</body>
+</html>

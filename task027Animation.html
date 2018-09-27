@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task 27 Animation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/task027.css">
+	<script src="js/jQuery3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('ready');
+			$('#left > div:nth-child(1)').animate({
+				height:'150px',
+				width:'150px'}, 
+				2500, 'swing');
+			$('#left > div:nth-child(2)').animate({
+				height:'150px',
+				width:'150px'},
+				2500, 'linear');
+			$('#left > div:nth-child(3)').animate({
+				height:'150px',
+				width:'150px'},
+				2500,
+				function() {
+					$('#p1').append("Animation complete");
+				});
+			$('#left > div:nth-child(4)').animate(
+				{
+					height:'100px',
+					width:'100px'
+				},
+				{
+					duration:2000,
+					complete:function() {
+						$(this).animate({
+							height:'150px',
+							width:'150px'},
+							500,
+							function() {
+								$('#p2').text('Animation complete');
+							});
+					},
+					start:function() {
+						$('#p2').text('Running animation');
+					}
+				});
+			$('#queue').fadeIn(500);
+			$("#queue").toggle(500);
+			$('#queue').fadeIn(500);
+			$('#queue').fadeOut(500);
+			$('#queue').slideDown(500);
+			$('#p3').text('Animation fucntions: ' + $('#queue').queue().length);
+			$('#fadeIn').hide(0);
+			$('#fadeIn').fadeIn(2500, 'swing', function() {
+				$('#p4').append('<br>fadeIn() complete');
+			});
+			$('#fadeOut').fadeOut(2500, function() {
+				$('#p4').append('<br>fadeOut() complete');
+			})
+
+		});
+	</script>
+</head>
+<body>
+	<div id="main" class="main">
+		<div id="left" class="left">
+			<div class="div1">
+				Switg
+			</div>
+			<div class="div2">
+				linear
+			</div>
+			<div class="div1">
+				hello there
+				<p id="p1"></p>
+			</div>
+			<div class="div2">
+				hello ourself
+				<p id="p2"></p>
+			</div>
+		</div>
+		<div id="right" class="right">
+			<div id="fadeIn" class="div2 box">
+				FadeIn
+				<p id="p4"></p>
+			</div>
+			<div id="fadeOut" class="div1 box">
+				FadeOut
+				<p id="p5"></p>
+			</div>
+			<div id="queue" class="div1 box">
+				Queue : spell me 10 times
+				<p id="p3"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Task 23 Attribute Manipulation</title>
+	<meta namae="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" tpe="text/css" href="css/task023.css">
+	<script src="js/jQuery3.3.1.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log($('p').attr('style'));
+			console.log($('div > div').attr('style', 'background-color:lightgray;padding:5px'));
+			$('<div id="div2" style="background-color:yellow;padding:5px">' + $('#div1').html() + '</div>').replaceAll('#p2');
+			console.log($('#i1').val());
+			console.log($('#dump').text());
+		});
+	</script>
+</head>
+
+<body>
+	<div id="main" style="background-color:cyan;padding:5px">
+		<p id="p1" style="font:30px vardana">This is a paragraph</p>
+		<div id="div1" style="background-color:yellow;padding:5px">
+			<p id="p2" style="font:25px arial">This is second paragraph</p>
+		</div>
+		<div id="dump">
+			<span>
+				<label>hello</label>
+				<span>
+					<label>there</label>
+					<span>
+						<label>howdy</label>
+					</span>
+				</span>
+			</span>
+			<input type="button" id="i1" value="there">
+		</div>
+	</div>
+</body>
+</html>

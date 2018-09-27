@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Task 25 Travesing methods</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="task25.css">
+	<script src="js/jQuery3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log('ready');
+			//all children(immediate) of element with id=main
+			$('#main').children().each(function() {
+				console.log($(this));
+			});
+			//all children(every level) of element with id=nav which are label
+			$('#nav').find('label').each(function() {
+				console.log($(this));
+			});
+			//all children(every level) of element with id=content
+			$('#content').find('*').each(function() {
+				console.log($(this));
+			});
+			//all lable element in DOM
+			$('*').find('label').each(function() {
+				console.log($(this));
+			});
+			//next sibling of the selected element
+			console.log($('#item12').next());
+			console.log($('label').next());
+			//parent of the selected element in order
+			console.log($('label').parent());
+
+			$('#header').siblings().each(function() {
+				console.log($(this));
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="header" style="background-color:cyan">
+			<h1>Header</h1>
+			<h3>Sub Header</h3>
+		</div>
+		<div id="nav" style="background-color:lime">
+				<label id="item11">item 1</label>
+				<label id="item12">item 2</label>
+				<label id="item13">item 3</label>
+		</div>
+		<div id="content">
+			<div id="sidenav" style="background-color:blue">
+				<label id="item21">item 1</label>
+				<label id="item22">item 2</label>
+				<label id="item23">item 3</label>
+			</div>
+			<div id="main_content" style="background-color:green">
+				main content
+			</div>
+		</div>
+		<div id="footer" style="background-color:gray">
+			footer
+		</div>
+	</div>
+</body>
+</html>

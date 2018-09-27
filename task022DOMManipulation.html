@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Task 22 Dom Mainpulation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/task022.css">
+	<script src="js/jQuery3.3.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			console.log("ready");
+			$('#div1').after('<div id="12" style="background-color:yellow">New Div</div>');
+			$('#div2').before('<div id="20" style="background-color:cyan">Second New div</div>');
+			$('<p id="12" style="background-color:yellow">p12</p>').replaceAll('#12');
+			$('<p id="20" style="background-color:cyan">p20</p>').replaceAll('#20');
+			$('div, p').prepend('I am the starting of the element<br>')
+			$('div, p').append('<br>I am the end of the element');
+			$('#div1').remove();
+			$('#div2').remove();
+			$('p').wrap('<div></div>');
+		});
+	</script>
+</head>
+
+<body>
+	<div class="main">
+		<div id="div1">
+			Div 1
+		</div>
+		<div id="div2">
+			Div 2
+		</div>
+	</div>
+</body>
+</html>

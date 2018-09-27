@@ -1,0 +1,33 @@
+html,
+body {
+	height:100%;
+	margin:0;
+}
+.main {
+	background-color:wheat;
+	display:flex;
+	flex-direction:row;
+	text-align:center;
+}
+.left,
+.right {
+	background-color:cyan;
+	width:100%;
+}
+.right {
+	background-color:yellow;
+}
+.div1 {
+	background-color:green;
+	display:block;
+	text-align:center
+}
+.div2 {
+	background-color:red;
+	display:block;
+	text-align:center;
+}
+.box {
+	height:150px;
+	width:150px;
+}
